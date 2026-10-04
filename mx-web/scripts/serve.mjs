@@ -1,5 +1,5 @@
 // Local static server for the pre-rendered build — behaves like production hosting:
-// /products → dist/products/index.html, unknown paths → dist/404.html with status 404,
+// /products → dist/products.html, unknown paths → dist/404.html with status 404,
 // /path/ → 301 to /path (canonical URLs have no trailing slash).
 //   npm run build && npm run serve      (PORT=4180 by default)
 import { createReadStream, existsSync, statSync } from 'node:fs'
@@ -29,6 +29,8 @@ function resolve(pathname) {
   const safe = normalize(decodeURIComponent(pathname)).replace(/^(\.\.[/\\])+/, '')
   const direct = join(ROOT, safe)
   if (existsSync(direct) && statSync(direct).isFile()) return direct
+  const page = `${join(ROOT, safe)}.html`
+  if (existsSync(page)) return page
   const index = join(ROOT, safe, 'index.html')
   return existsSync(index) ? index : null
 }

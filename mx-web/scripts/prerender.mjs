@@ -52,7 +52,9 @@ async function writePage(path, file) {
 
 const entries = indexablePaths()
 for (const { path } of entries) {
-  const file = path === '/' ? 'index.html' : join(path.slice(1), 'index.html')
+  // /about → about.html. Static hosts (Cloudflare Pages, Netlify, Vercel clean URLs) serve it at
+  // /about with no trailing-slash redirect, matching the canonical URL.
+  const file = path === '/' ? 'index.html' : `${path.slice(1)}.html`
   const status = await writePage(path, file)
   if (status !== 200) throw new Error(`${path} rendered with status ${status}`)
   console.log(`✓ ${path}`)
