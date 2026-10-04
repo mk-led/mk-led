@@ -1,0 +1,35 @@
+{
+  "_readme": "Single source of truth for MK-LED company details. Edit values here only. Empty string = hidden on the website. Social links must be full profile URLs, e.g. https://www.instagram.com/mkled.official (validated by src/content/site.test.ts).",
+  "name": "MK-LED",
+  "legalName": "MK LED's",
+  "statement": "Professional LED Display Solutions",
+  "description": "MK-LED designs, fabricates, installs and supports professional indoor and outdoor LED display walls — from boardrooms to building façades.",
+  "url": "https://mkled.net",
+  "experienceYears": 20,
+  "contact": {
+    "email": "sales@mkled.net",
+    "phone": "+91 97427 55592",
+    "whatsapp": "+91 97427 55592",
+    "whatsappMessage": "Hello MK-LED, I’d like to discuss an LED display project.",
+    "hours": "Open 24 hours, 7 days a week",
+    "open24x7": true
+  },
+  "address": {
+    "street": "Seenivasapuram",
+    "locality": "Krishnagiri",
+    "region": "Tamil Nadu",
+    "postalCode": "635203",
+    "country": "IN",
+    "countryName": "India",
+    "mapUrl": ""
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "x": "",
+    "youtube": "",
+    "threads": "",
+    "pinterest": ""
+  }
+}
