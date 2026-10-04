@@ -49,7 +49,7 @@ describe('routes', () => {
     expect(within(channels).getByRole('link', { name: /sales@mkled\.net/i })).toHaveAttribute('href', 'mailto:sales@mkled.net')
     expect(within(channels).getByRole('link', { name: /call/i })).toHaveAttribute('href', 'tel:+919742755592')
     expect(within(channels).getByRole('link', { name: /whatsapp/i }).getAttribute('href')).toMatch(/^https:\/\/wa\.me\/919742755592\?text=/)
-    expect(within(channels).getByRole('link', { name: /krishnagiri/i }).getAttribute('href')).toMatch(/^https:\/\/www\.google\.com\/maps\//)
+    expect(within(channels).getByRole('link', { name: /krishnagiri/i }).getAttribute('href')).toBe('https://maps.app.goo.gl/gGAvcmLX3XSpttpv5')
   })
 
   it('pre-selects the product on the quote page', async () => {
